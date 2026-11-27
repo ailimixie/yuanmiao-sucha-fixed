@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f7f2ea" />
+  <title>园喵速查 · 校园猫咪服务</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./theme.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar"><button class="brand" type="button" data-action="openAccount" aria-haspopup="dialog" aria-controls="accountDrawer"><span class="brand-mark">🐾︎</span><span>园喵速查</span></button><button class="icon-button" aria-label="更多" data-action="toast" data-message="这里是演示原型">···</button></header>
+    <main id="app" aria-live="polite"></main>
+    <nav class="tabbar" aria-label="主导航">
+      <button data-tab="home"><span>⌂</span><small>首页</small></button>
+      <button data-tab="report"><span>▣</span><small>上报</small></button>
+      <button data-tab="map"><span>♧</span><small>地图</small></button>
+      <button data-tab="help"><span>▤</span><small>科普救助</small></button>
+      <button data-tab="park"><span>🐾</span><small>乐园</small></button>
+    </nav>
+    <div id="toast" class="toast" role="status"></div>
+    <div id="accountLayer" class="account-layer" aria-hidden="true">
+      <button class="account-scrim" type="button" data-action="closeAccount" aria-label="关闭个人中心"></button>
+      <aside id="accountDrawer" class="account-drawer" role="dialog" aria-modal="true" aria-label="个人中心">
+        <div class="account-top"><span class="brand-mark">🐾︎</span><div><strong>喵友个人中心</strong><small>登录后保存你的乐园足迹</small></div><button type="button" class="account-close" data-action="closeAccount" aria-label="关闭">×</button></div>
+        <section class="account-card account-auth"><div class="account-section-title"><span>账号</span><small>同步猫咪与乐园记录</small></div><div class="account-auth-actions"><button type="button" data-action="authMode" data-mode="login">登录</button><button type="button" data-action="authMode" data-mode="register">注册</button></div><form class="account-auth-form" hidden><label>手机号或邮箱<input name="account" autocomplete="username" placeholder="请输入手机号或邮箱"></label><label>密码<input name="password" type="password" autocomplete="current-password" placeholder="请输入密码"></label><button class="account-primary" type="submit">继续</button><small>演示原型暂不连接真实账号服务</small></form></section>
+        <section class="account-card"><div class="account-section-title"><span>设置</span><small>按你的习惯调整</small></div><label class="account-setting"><span><b>减少动态效果</b><small>降低页面动画</small></span><input type="checkbox" data-setting="reduceMotion"></label><label class="account-setting"><span><b>消息提醒</b><small>接收上报与乐园互动提醒</small></span><input type="checkbox" data-setting="notifications"></label></section>
+        <section class="account-card account-history"><div class="account-section-title"><span>乐园浏览记录</span><button type="button" data-action="clearHistory">清空</button></div><div id="accountHistory" class="account-history-list"><p class="account-empty">玩过的小游戏会记录在这里</p></div></section>
+        <div class="account-footer">🐾　温柔观察，友善分享</div>
+      </aside>
+    </div>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>
